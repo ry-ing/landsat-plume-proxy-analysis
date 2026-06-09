@@ -1,0 +1,49 @@
+# =============================================================================
+# landsat-plume-proxy — external data paths
+# =============================================================================
+# Paths are relative to the repo root.
+# data/external/ and data/Landsat-plume-surface-temps_Store-glacier/ are gitignored.
+# =============================================================================
+
+paths:
+
+  # OMG CTD and AXCTD NetCDF files (OMG_Ocean*.nc)
+  # Download from NASA OMG: https://omg.jpl.nasa.gov/
+  omg_ctd_dir: data/external/OMG_CTD_AXCTD_data
+
+  # Mankoff et al. 2020 runoff directory (contains RACMO.nc and MAR.nc)
+  # https://doi.org/10.5194/essd-12-2361-2020
+  mankoff_runoff_dir: data/external/Mankoff_etal_2020_runoff/
+
+  # Rignot et al. 2010 Store Glacier CTD NetCDF
+  rignot_ctd_file: data/external/Rignot_Store-glacier_CTD_profiles/STORE_Aug2010.nc
+
+  # Directory of Landsat plume-front SST CSV files (one CSV per scene)
+  landsat_plume_sst_dir: data/Landsat-plume-surface-temps_Store-glacier
+
+  # Store Glacier ice-front shapefile (.shp + companion files)
+  store_icefront_shp: data/shapefiles/STORE_icefront.shp
+
+  # Ryan et al. 2015 Store Glacier bathymetry CSV
+  store_bathymetry_csv: data/Ryan_etal_2015_Store_bathymetry.csv
+
+  # EN4 hydrographic data directory (*.nc files)
+  # https://www.metoffice.gov.uk/hadobs/en4/
+  en4_dir: data/external/ocean_reanalysis_raw/EN4/
+
+  # Pre-processed TOPAZ4B NetCDF for the Store Glacier region
+  topaz4_store_file: data/external/ocean_reanalysis_raw/STORE_arc-phy-my-topaz4_data.nc
+
+  # Pre-processed ORAS5 NetCDF for the Store Glacier region
+  oras5_store_file: data/external/ocean_reanalysis_raw/ORAS5_T.nc
+
+  # Landsat SST retrieval Python module directory (used by plot_LAKEheating.ipynb)
+  # Set to '' to skip that notebook
+  landsat_sst_module_dir: data/external/landsat_sst_module
+
+# =============================================================================
+# Output paths — relative to repo root
+# =============================================================================
+output:
+  figures_dir: figures/
+  data_dir: data/

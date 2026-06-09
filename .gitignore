@@ -1,0 +1,31 @@
+# All data files — keep directory structure only (.gitkeep files preserved)
+data/**
+!data/**/.gitkeep
+
+# ignore archive folder
+/archive/
+
+# Tool/editor directories
+.claude/
+.vscode/
+
+# Large figures
+
+# Notebook outputs and checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+*.egg-info/
+
+# Logs and temp files
+*.log
+plume_modelling/progress.txt
+plume_modelling/plume_simulation.log
+scripts/plume_modelling/progress.txt
+scripts/plume_modelling/plume_simulation.log
