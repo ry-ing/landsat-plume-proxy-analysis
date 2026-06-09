@@ -1,34 +1,15 @@
 # landsat-plume-proxy
 
-Code for simulating subglacial meltwater plumes at Greenland tidewater glaciers using OMG CTD/AXCTD profiles, and evaluating Landsat SST as a plume proxy.
-
-## Setup
-
-### 1. Install dependencies
-
-```bash
-pip install numpy scipy xarray pandas geopandas shapely dask distributed pyDOE scikit-learn matplotlib seaborn pyyaml
-```
-
-### 2. Configure external data paths
-
-All paths to datasets that live outside this repository are declared in `config.yaml`. Open it and fill in the paths for your system — every entry marked `/path/to/...` needs to be set before running the notebooks.
-
-```bash
-cp config.yaml config.yaml   # already committed — just edit in place
-```
-
-In-repo data (inside `data/`) is referenced by relative path and requires no configuration.
-
----
+Code for running plume modelling and creating main figures for "Investigating the use of Landsat-derived Sea Surface Temperatures as a proxy for changes in ocean forcing of Greenland’s marine-terminating outlet glaciers" in review in the Journal of Glaciology.
 
 ## Overview
 
 The workflow:
 1. Filters and pre-processes OMG CTD/AXCTD profiles for a target fjord
-2. Runs a buoyant plume model (Slater 2022) in ensemble using Latin Hypercube Sampling
-3. Analyses plume surface temperature and surfacing probability as a function of ocean forcing and discharge
+2. Runs a buoyant plume model (run_PLUME.py) (Slater et al. 2022) in ensemble using Latin Hypercube Sampling
+3. Analyses plume surface temperature and surfacing 
 4. Compares modelled plume surface temperature against Landsat-derived SST and reanalysis ocean data
+5. Create plume surface temperature timeseries and other plots.
 
 ## Repository structure
 
@@ -60,7 +41,7 @@ extract_EN4.ipynb                     # EN4 depth-averaged temperature extractio
 ASTE_gridcheck.ipynb                  # Grid alignment checks (ASTE, TOPAZ4B, ORAS5)
 ```
 
-## Main pipeline
+<!-- ## Main pipeline
 
 ### 1. CTD pre-processing (`scripts/plume_modelling/run_CTD-plume-ensembles.ipynb`, sections 1–3)
 
@@ -82,18 +63,10 @@ ASTE_gridcheck.ipynb                  # Grid alignment checks (ASTE, TOPAZ4B, OR
 
 - Random Forest models assess which factors control plume surfacing probability and surface temperature
 - Features: discharge, entrainment, depth, ocean layer temperatures, stratification (N²)
-- Figures saved to `figures/`
+- Figures saved to `figures/` -->
 
-## Key dependencies
-
-- `numpy`, `scipy`, `xarray`, `pandas`, `pyyaml`
-- `geopandas`, `shapely`, `cartopy`
-- `dask`, `distributed`
-- `pyDOE` (Latin Hypercube Sampling)
-- `scikit-learn` (Random Forest, GPR)
-- `matplotlib`, `seaborn`
-
-## External data requirements
+<!-- 
+## External data 
 
 Set paths for these in `config.yaml` before running:
 
@@ -107,10 +80,4 @@ Set paths for these in `config.yaml` before running:
 | `en4_dir` | EN4 hydrographic profiles | [Met Office](https://www.metoffice.gov.uk/hadobs/en4/) |
 | `topaz4_store_file` | TOPAZ4B Store-region extract | [Copernicus Marine](https://marine.copernicus.eu/) |
 | `oras5_store_file` | ORAS5 Store-region extract | [ECMWF](https://www.ecmwf.int/en/research/climate-reanalysis/ocean-reanalysis) |
-| `aste_grid_file` | ASTE MITgcm grid (GRID.0014.nc) | [CRIOS Portal](https://crios-ut.github.io/ASTE/) |
-
-## References
-
-- Slater, D. A. et al. (2022). Localised plume forcing of Greenland outlet glaciers. *GRL*. — plume model basis
-- Mas e Braga, M. et al. (2025). — fjord classification CSV
-- Mankoff, K. D. et al. (2020). Greenland liquid water discharge. *ESSD*.
+| `aste_grid_file` | ASTE MITgcm grid (GRID.0014.nc) | [CRIOS Portal](https://crios-ut.github.io/ASTE/) | -->
