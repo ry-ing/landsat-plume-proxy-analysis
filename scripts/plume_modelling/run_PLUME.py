@@ -5,7 +5,7 @@ def run_plume(zi, xi, Ta, Sa, Na, Q0, alpha, stop_on_zero_velocity=False):
     """
     ICE SHELF/TIDEWATER GLACIER PLUME MODEL
     FOR ARBITRARY ICE-OCEAN BOUNDARY GEOMETRY
-    Donald Slater, uploaded as part of Slater 2022, GRL
+    Python version of run_plume.m by Donald Slater (Slater et al., 2016; Slater et al., 2022)
 
     % USEFUL NOTES
     1. model assumes ocean surface at z=0 with z negative below surface

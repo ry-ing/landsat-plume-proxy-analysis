@@ -14,7 +14,7 @@ p2r = _cfg['paths']['mankoff_runoff_dir']
 def deg2rad(deg):
     return deg * (np.pi / 180.0)
 
-def latlon2utm(phi, lambd):
+def latlon2utm(phi, lambd): # to find closer runoff outler
     a = 6378137.0
     e = 0.08181919
     phi_c = 70.0
@@ -26,7 +26,6 @@ def latlon2utm(phi, lambd):
     lambd = deg2rad(lambd)
     lambda_0 = deg2rad(lambda_0)
 
-    # Switching to South Hemisphere if necessary
     pm = 1
     if phi_c < 0:
         pm = -1
